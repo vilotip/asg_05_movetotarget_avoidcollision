@@ -129,7 +129,7 @@ def edge_detection(scan_steps, scan_speed, pub, listener, cmd_msg, is_left_pass)
 def run_scan(pub, listener, cmd_msg):
     # 1. SCAN LEFT
     left_wp_x, left_wp_y, left_e_x, left_e_y = edge_detection(
-        steps=120, angular_vel=SCAN_SPEED, pub=pub, listener=listener, cmd_msg=cmd_msg, is_left_pass=True
+        scan_steps=120, scan_speed=SCAN_SPEED, pub=pub, listener=listener, cmd_msg=cmd_msg, is_left_pass=True
     )
     
     # 2. RETURN TO CENTER 
@@ -140,7 +140,7 @@ def run_scan(pub, listener, cmd_msg):
         
     # 3. SCAN RIGHT
     right_wp_x, right_wp_y, right_e_x, right_e_y = edge_detection(
-        steps=120, angular_vel=-SCAN_SPEED, pub=pub, listener=listener, cmd_msg=cmd_msg, is_left_pass=False
+        scan_steps=120, scan_speed=-SCAN_SPEED, pub=pub, listener=listener, cmd_msg=cmd_msg, is_left_pass=False
     )
 
     # 4. RETURN TO CENTER 
